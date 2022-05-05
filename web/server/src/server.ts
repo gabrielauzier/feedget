@@ -1,5 +1,6 @@
 import express from "express";
 import { routes } from "./routes";
+import cors from "cors";
 
 const app = express();
 
@@ -11,6 +12,7 @@ const app = express();
 // PATCH = Atualizar uma informação única de uma entidade
 // DELETE = Deletar uma informação
 
+app.use(cors());
 app.use(express.json()); // plug-in
 app.use(routes);
 
